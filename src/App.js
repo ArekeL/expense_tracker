@@ -1,8 +1,8 @@
 // import ExpenseItem from "./components/ExpenseItem";
-import Expenses from "./components/Expenses";
+import Expenses from "./components/Expenses/Expenses";
+import NewExpense from "./components/NewExpenses/NewExpense";
 
 import "./App.css";
-
 function App() {
 	const expenses = [
 		{
@@ -31,10 +31,14 @@ function App() {
 		},
 	];
 
+	const handleAddExpese = (expense) => {
+		console.log("It is App.js");
+		console.log(expense);
+	};
+
 	return (
 		<div className='App'>
-			<h1>Hello World</h1>
-			<p>Expense Tracker</p>
+			<NewExpense onAddExpense={handleAddExpese} />
 			<Expenses expenses={expenses} />
 		</div>
 	);
